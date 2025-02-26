@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franco Frisoni | Edición & VFX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: black;
+            color: #0ff; /* Cian neón */
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #0ff;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #00f;
+            animation: flicker 1.5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 1;
+                text-shadow: 0 0 10px #0ff, 0 0 20px #00f, 0 0 30px #0ff;
+            }
+            25%, 75% {
+                opacity: 0.9;
+                text-shadow: 0 0 15px #00f, 0 0 25px #0ff;
+            }
+        }
+
+        .about {
+            max-width: 800px;
+            margin: 40px auto;
+            background: rgba(0, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #0ff;
+            box-shadow: 0 0 10px #0ff;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            color: #0ff;
+            margin-bottom: 10px;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #0ff;
+            margin-bottom: 15px;
+        }
+
+        .video-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 600px;
+            margin: 40px auto 0; /* Agrega margen superior */
+        }
+
+       .video-gallery iframe {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.video-gallery iframe:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px #0ff;
+}
+         .video-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 560px; /* Tamaño máximo */
+        padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+        height: 0;
+    }
+
+    .video-gallery iframe:hover,
+.video-gallery iframe:active {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px #0ff;
+}
+
+.video-wrapper.vertical {
+
+        padding-bottom: 177.78%; /* Relación de aspecto 9:16 */
+
+    }
+
+
+
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.2s;
+            box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.5);
+            z-index: 1000;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            background-color: #0ff;
+        }
+
+        .highlight {
+            color: #0ff;
+            font-weight: bold;
+            text-shadow: 0 0 8px #0ff;
+        }
+
+
+.video-note {
+    font-size: 0.70rem; /* Más pequeño */
+    color: #0ff;
+    margin-top: -5px; /* Reduce el espacio con los videos */
+    text-align: center;
+    opacity: 0.8;
+}
+
+.video-note a {
+    color: #0ff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.video-note a:hover {
+    color: #00f;
+    text-decoration: underline;
+}
+
+
+
+
+
+        /* Ajustes para móviles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .about {
+                max-width: 90%;
+                padding: 15px;
+            }
+
+                .background-video {
+        display: block !important;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        opacity: 0.3;
+        z-index: -1;
+    }
+
+        }
+
+        @media (max-width: 500px) {
+            .whatsapp-button {
+                bottom: 10px;
+                right: 10px;
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <video class="background-video" src="background.mp4" autoplay loop muted></video>
+    
+    <div class="container">
+        <h1>Franco Frisoni | Edición & VFX</h1>
+
+        <div class="video-gallery">
+
+<div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/Q36jZEhO_lA" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-wrapper ">
+        <iframe src="https://www.youtube.com/embed/takrdfrGl5w" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/JkHi4JvvHJM" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+
+
+            <p class="video-note">
+    Estos son solo algunos ejemplos de mi trabajo: un <strong>Showreel</strong>, un <strong>video para TikTok</strong> y otro para <strong>YouTube</strong>.  
+</p>
+        </div>
+    </div>
+
+
+
+    <div class="about"> 
+        <img src="perfil.jpg" alt="Franco Frisoni" class="profile-pic">
+        <h2><span class="highlight">Sobre mí</span></h2>
+        <p>Soy <span class="highlight"><strong>Franco Frisoni</strong></span>, editor de video de <em>22 años</em> nacido en Argentina.<br>  
+        Me especializo en <strong>edición y postproducción audiovisual</strong>.  
+        Trabajo con distintos formatos y estilos, asegurando que cada proyecto tenga  
+        una <strong>narrativa fluida</strong> y un <em>impacto visual atractivo</em>.</p>
+    </div>
+
+    <a href="https://wa.me/1134438506?text=Hola,%20vi%20tu%20portfolio%20y%20me%20gustaría%20hablar%20contigo" class="whatsapp-button" target="_blank">Contactarme por WhatsApp</a>
+</body>
+</html>
